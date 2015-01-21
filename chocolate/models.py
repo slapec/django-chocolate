@@ -8,7 +8,7 @@ from django.db.models.fields.related import ManyRelatedObjectsDescriptor
 from django.db.models.fields.related import ForeignRelatedObjectsDescriptor
 from django.db import models
 
-import generators
+from chocolate import generators
 
 
 FIELDCLASS_TO_GENERATOR = {
@@ -320,7 +320,7 @@ class Mockup(object):
             else:
                 try:
                     Mockup.generate_value(field, model_data)
-                except KeyError, e:
+                except KeyError as e:
                     if e.args[0] != models.fields.AutoField:
                         msg = "Could not mockup data for %s.%s %s"
                         msg %= (model_class.__name__, field.name, e.args[0])

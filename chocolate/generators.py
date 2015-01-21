@@ -107,8 +107,8 @@ class UUIDGenerator(Generator):
 
 
 class StringGenerator(Generator):
-    coerce_type = unicode
-    singleline_chars = string.letters + u' '
+    coerce_type = str
+    singleline_chars = string.ascii_letters + u' '
     multiline_chars = singleline_chars + u'\n'
 
     def __init__(self, chars=None, multiline=False, min_length=1,
@@ -143,7 +143,7 @@ class SlugGenerator(StringGenerator):
 
 
 class LoremGenerator(Generator):
-    coerce_type = unicode
+    coerce_type = str
     common = True
     count = 3
     method = 'b'
@@ -398,7 +398,7 @@ class URLGenerator(StringGenerator):
 
 
 class IPAddressGenerator(Generator):
-    coerce_type = unicode
+    coerce_type = str
 
     def generate(self):
         return '.'.join([unicode(part) for part in [
@@ -420,7 +420,7 @@ class TimeGenerator(Generator):
 
 
 class FilePathGenerator(Generator):
-    coerce_type = unicode
+    coerce_type = str
 
     def __init__(self, path, match=None, recursive=False, max_length=None,
             *args, **kwargs):

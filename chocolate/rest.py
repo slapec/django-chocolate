@@ -1,8 +1,8 @@
 from tastypie.resources import ModelResource
 from tastypie import fields
-from models import Mockup, ModelFactory
+from chocolate.models import Mockup, ModelFactory
 
-import generators
+from chocolate import generators
 import json
 
 
