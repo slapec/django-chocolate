@@ -83,9 +83,9 @@ class TastyMockup(object):
 
                     if field_name in kwargs:
                         value = kwargs[field_name]
-                    elif isinstance(attribute, basestring):
+                    elif isinstance(attribute, str):
                         model_field = self.model_class._meta.get_field(attribute)
-                        value = unicode(Mockup.generate_value(model_field))
+                        value = str(Mockup.generate_value(model_field))
                     else:
                         if issubclass(generator_class, generators.FieldGenerator):
                             generator = generator_class(field)

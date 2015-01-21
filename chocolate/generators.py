@@ -166,7 +166,7 @@ class LoremGenerator(Generator):
             lorem = words(self.count, common=self.common)
         elif self.method == 's':
             lorem = u' '.join([sentence()
-                for i in xrange(self.count)])
+                for i in range(self.count)])
         else:
             paras = paragraphs(self.count, common=self.common)
             if self.method == 'p':
